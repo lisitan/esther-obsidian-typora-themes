@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.10
+ * Esther Inspired for Obsidian 1.1.11
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -1039,6 +1039,7 @@ a.tag {
 }
 
 .nav-file-title.is-active .nav-file-title-content {
+  color: var(--nav-item-color-active);
   font-weight: 750;
 }
 
@@ -1068,11 +1069,17 @@ a.tag {
 /* Inputs, menus and settings */
 input,
 textarea,
-select,
-.dropdown,
 .search-input-container input {
   border-color: var(--esther-border);
-  background: var(--esther-surface);
+  background-color: var(--esther-surface);
+  box-shadow: none;
+}
+
+select,
+.dropdown {
+  border-color: var(--esther-border);
+  background-color: var(--esther-surface);
+  background-repeat: no-repeat;
   box-shadow: none;
 }
 

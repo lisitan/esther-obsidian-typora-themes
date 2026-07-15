@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.11 — 2026-07-15
+
+- Fixed repeated dropdown arrows in Obsidian settings on dark mode and some Windows configurations.
+- Preserved Obsidian's native dropdown icon while applying the Esther surface color.
+- Improved the contrast of the active file title in the dark file explorer.
+
 ## 1.1.10 — 2026-07-15
 
 - Added a concise English overview and community-directory installation guide.
