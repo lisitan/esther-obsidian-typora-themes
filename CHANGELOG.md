@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.12 — 2026-07-15
+
+- Redesigned Obsidian fenced code blocks with separate Apple-inspired light and dark palettes in Reading View and Live Preview.
+- Increased code-editor cursor contrast and added a subtle active-line highlight.
+- Added a Style Settings option that reveals file explorer action buttons on hover while preserving the existing default behavior.
+- Refined the file explorer hierarchy with restrained editorial folder styling and cleaner active-file treatment.
+- Removed file explorer indentation guides for an uncluttered sidebar in both color modes.
+
 ## 1.1.11 — 2026-07-15
 
 - Fixed repeated dropdown arrows in Obsidian settings on dark mode and some Windows configurations.

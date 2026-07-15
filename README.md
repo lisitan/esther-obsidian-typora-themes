@@ -67,11 +67,11 @@
 
 - 主题会跟随 Obsidian 的浅色或深色模式自动切换。
 - 可以直接使用 Obsidian 的字体与界面缩放设置。
-- 安装可选的 **Style Settings** 社区插件后，可以调整正文阅读宽度，并开启紧凑界面模式。
+- 安装可选的 **Style Settings** 社区插件后，可以调整正文阅读宽度、开启紧凑界面模式，并选择让文件列表顶部按钮仅在悬停时显示。
 
 ## 在 Typora 中安装
 
-1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.11.zip`。
+1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.12.zip`。
 2. 解压后，将以下文件和文件夹放入 Typora 主题文件夹：
 
 ```text

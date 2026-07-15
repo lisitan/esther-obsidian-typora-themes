@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.11
+ * Esther Inspired for Obsidian 1.1.12
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -23,6 +23,13 @@ settings:
   - id: esther-compact-ui
     title: Compact interface
     title.zh: 紧凑界面
+    type: class-toggle
+    default: false
+  - id: esther-hover-file-actions
+    title: Reveal file actions on hover
+    title.zh: 文件列表按钮仅在悬停时显示
+    description: Hide the file explorer action buttons until the header is hovered or focused.
+    description.zh: 隐藏文件列表顶部操作按钮，鼠标移入或键盘聚焦时再显示。
     type: class-toggle
     default: false
 */
@@ -159,9 +166,13 @@ body.theme-light {
   --esther-surface: #fffdf8;
   --esther-surface-strong: #ffffff;
   --esther-surface-soft: #faf6eb;
-  --esther-code-bg: #151821;
-  --esther-code-text: #ece9df;
-  --esther-code-muted: #a7afbe;
+  --esther-code-bg: #f7f8fa;
+  --esther-code-toolbar: #eef0f4;
+  --esther-code-text: #252832;
+  --esther-code-muted: #727887;
+  --esther-code-border: #d9dde5;
+  --esther-code-cursor: #156fd1;
+  --esther-code-active-line: rgba(43, 127, 216, 0.08);
   --esther-inline-code-bg: #f5efe1;
   --esther-inline-code-text: #b43c50;
   --esther-border: #e8e0cf;
@@ -285,8 +296,12 @@ body.theme-dark {
   --esther-surface-strong: #202531;
   --esther-surface-soft: #11141c;
   --esther-code-bg: #0d1117;
+  --esther-code-toolbar: #1b1f29;
   --esther-code-text: #e7e3d9;
   --esther-code-muted: #9ca4b4;
+  --esther-code-border: #303645;
+  --esther-code-cursor: #f4d758;
+  --esther-code-active-line: rgba(244, 215, 88, 0.07);
   --esther-inline-code-bg: #292331;
   --esther-inline-code-text: #ff8b9a;
   --esther-border: #303645;
@@ -761,24 +776,32 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
 .markdown-rendered pre {
   position: relative;
   margin: 1.5em 0;
-  padding: 2.75em 1.25em 1.25em;
-  border: 0;
+  padding: 3.25em 1.25em 1.25em;
+  border: 1px solid var(--esther-code-border);
   border-radius: 15px;
   color: var(--esther-code-text);
-  background: var(--esther-code-bg);
+  background-color: var(--esther-code-bg);
+  background-image: linear-gradient(
+    to bottom,
+    var(--esther-code-toolbar) 0 2.35rem,
+    var(--esther-code-border) 2.35rem 2.4rem,
+    var(--esther-code-bg) 2.4rem 100%
+  );
+  background-repeat: no-repeat;
   box-shadow: 0 12px 30px var(--esther-shadow);
 }
 
 .markdown-rendered pre::before {
   content: "";
   position: absolute;
-  top: 1em;
+  top: 0.86rem;
   left: 1.2em;
-  width: 9px;
-  height: 9px;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--esther-red);
-  box-shadow: 16px 0 0 var(--esther-yellow), 32px 0 0 #4ade80;
+  background: #ff5f57;
+  box-shadow: 17px 0 0 #febc2e, 34px 0 0 #28c840;
 }
 
 .markdown-rendered pre code {
@@ -791,20 +814,61 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  box-sizing: border-box;
   padding-inline: 1.2em;
+  border-right: 1px solid var(--esther-code-border);
+  border-left: 1px solid var(--esther-code-border);
   color: var(--esther-code-text);
-  background: var(--esther-code-bg);
+  background-color: var(--esther-code-bg);
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
-  padding-top: 1em;
+  position: relative;
+  min-height: 3.25rem;
+  padding-top: 2.45rem;
+  border-top: 1px solid var(--esther-code-border);
   border-radius: 15px 15px 0 0;
+  background-color: var(--esther-code-bg);
+  background-image: linear-gradient(
+    to bottom,
+    var(--esther-code-toolbar) 0 2.35rem,
+    var(--esther-code-border) 2.35rem 2.4rem,
+    var(--esther-code-bg) 2.4rem 100%
+  );
+  background-repeat: no-repeat;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin::before {
+  content: "";
+  position: absolute;
+  top: 0.86rem;
+  left: 1.2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 17px 0 0 #febc2e, 34px 0 0 #28c840;
+  pointer-events: none;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
   padding-bottom: 1em;
+  border-bottom: 1px solid var(--esther-code-border);
   border-radius: 0 0 15px 15px;
   box-shadow: 0 10px 28px var(--esther-shadow);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock.cm-active {
+  background-color: var(--esther-code-active-line);
+}
+
+.cm-s-obsidian .cm-cursor,
+.cm-s-obsidian .cm-dropCursor {
+  border-left: 2px solid var(--esther-code-cursor);
+}
+
+.markdown-source-view.mod-cm6 .cm-content {
+  caret-color: var(--esther-code-cursor);
 }
 
 .markdown-source-view.mod-cm6 .cm-formatting-code-block,
@@ -1022,6 +1086,15 @@ a.tag {
 }
 
 /* File explorer, outline and search */
+.workspace-leaf-content[data-type="file-explorer"] {
+  --nav-indentation-guide-width: 0;
+  --nav-indentation-guide-color: transparent;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-folder-children {
+  border-inline-start: 0;
+}
+
 .nav-folder-title,
 .nav-file-title,
 .tree-item-self {
@@ -1034,8 +1107,50 @@ a.tag {
   font-weight: 700;
 }
 
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder.mod-root
+  > .nav-folder-children
+  > .nav-folder
+  > .nav-folder-title {
+  position: relative;
+  margin-top: 4px;
+  padding-right: 28px;
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder.mod-root
+  > .nav-folder-children
+  > .nav-folder
+  > .nav-folder-title
+  .nav-folder-title-content {
+  color: var(--text-normal);
+  font-family: var(--esther-font-serif);
+  font-weight: 780;
+  letter-spacing: 0.01em;
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder.mod-root
+  > .nav-folder-children
+  > .nav-folder
+  > .nav-folder-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  width: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--esther-yellow);
+  opacity: 0.66;
+  transform: translateY(-50%) rotate(-3deg);
+  pointer-events: none;
+}
+
 .nav-file-title.is-active {
-  box-shadow: inset 4px 0 0 var(--esther-blue);
+  border: 0;
+  background: var(--nav-item-background-active);
+  box-shadow: none;
 }
 
 .nav-file-title.is-active .nav-file-title-content {
@@ -1048,6 +1163,12 @@ a.tag {
 .nav-folder-title:hover {
   color: var(--nav-item-color-hover);
   background: var(--nav-item-background-hover);
+}
+
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-name {
+  color: var(--text-normal);
+  font-family: var(--esther-font-serif);
+  font-weight: 780;
 }
 
 .search-result-file-title {
@@ -1148,6 +1269,32 @@ body.esther-compact-ui {
 body.esther-compact-ui .nav-file-title,
 body.esther-compact-ui .nav-folder-title {
   padding-block: 2px;
+}
+
+/* Optional file explorer action reveal for Style Settings */
+body:not(.is-mobile).esther-hover-file-actions
+  .workspace-leaf-content[data-type="file-explorer"]
+  > .nav-header
+  .nav-buttons-container {
+  opacity: 0;
+  transform: translateY(-5px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+body:not(.is-mobile).esther-hover-file-actions
+  .workspace-leaf-content[data-type="file-explorer"]
+  > .nav-header:is(:hover, :focus-within)
+  .nav-buttons-container,
+body:not(.is-mobile).esther-hover-file-actions
+  .workspace-tab-header-container:hover
+  ~ .workspace-tab-container
+  .workspace-leaf-content[data-type="file-explorer"]
+  > .nav-header
+  .nav-buttons-container {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* Scrollbars */
