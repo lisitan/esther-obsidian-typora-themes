@@ -1,63 +1,64 @@
-# Esther Inspired Themes for Obsidian & Typora
+# Esther Inspired：Obsidian 与 Typora 主题
 
-> An unofficial, non-commercial adaptation of the visual language of
-> [Esther Design System](https://github.com/esthersjw/esther-design-system) by
-> **ESTHER不二 (esthersjw)**. This project is not affiliated with or endorsed by
-> the original creator.
+> 本项目是基于 [Esther Design System](https://github.com/esthersjw/esther-design-system) 视觉语言制作的非官方、非商业改编主题。原设计系统作者为 **ESTHER不二（esthersjw）**。本项目与原作者没有隶属关系，也不代表原作者的官方发布或认可。
 
-一套同时适用于 **Obsidian** 和 **Typora** 的中文写作主题。整体保持温暖、克制、带一点手作感：蓝色负责结构，黄色负责强调，红色只做少量点缀。
+这是一套同时适用于 **Obsidian** 和 **Typora** 的中文写作主题。整体保持温暖、克制、带一点手作感：蓝色负责结构，黄色负责强调，红色只做少量点缀。
 
-This repository contains one adaptive Obsidian theme and two Typora themes:
+仓库包含一套可自动切换明暗模式的 Obsidian 主题，以及两套 Typora 主题：
 
-- **Obsidian — Esther Inspired**: automatically follows Obsidian's light/dark mode.
-- **Typora — Esther Inspired Paper**: warm light paper palette.
-- **Typora — Esther Inspired Midnight**: deep navy dark palette.
+- **Obsidian — Esther Inspired**：跟随 Obsidian 的浅色与深色模式自动切换完整配色。
+- **Typora — Esther Inspired Paper**：温暖、柔和的纸张感浅色主题。
+- **Typora — Esther Inspired Midnight**：以深海军蓝为底色的深色主题。
 
-## Preview
+## 效果预览
 
-### Obsidian · Light
+### Obsidian · 浅色模式
 
-![Esther Inspired in Obsidian light mode](assets/obsidian-light.jpg)
+![Esther Inspired 在 Obsidian 浅色模式中的效果](assets/obsidian-light.jpg)
 
-### Obsidian · Dark
+### Obsidian · 深色模式
 
-![Esther Inspired in Obsidian dark mode](assets/obsidian-dark.jpg)
+![Esther Inspired 在 Obsidian 深色模式中的效果](assets/obsidian-dark.jpg)
 
-### Typora · Paper
+### Typora · Paper 浅色主题
 
-![Esther Inspired Paper in Typora](assets/typora-paper.png)
+![Esther Inspired Paper 在 Typora 中的效果](assets/typora-paper.png)
 
-### Typora · Midnight
+### Typora · Midnight 深色主题
 
-![Esther Inspired Midnight in Typora](assets/typora-midnight.png)
+![Esther Inspired Midnight 在 Typora 中的效果](assets/typora-midnight.png)
 
-## Highlights
+## 主题特点
 
-- Reading View and Live Preview use consistent typography.
-- Editorial serif headings with a calm sans-serif body.
-- Pull quotes, tables, code blocks, task lists and footnotes are fully styled.
-- Highlights cover only the lower half of the text, like a real marker stroke.
-- Obsidian wiki links, unresolved links, aliases, embeds and backlinks are supported.
-- Obsidian workspace UI, properties, search, graph, Canvas and print are included.
-- Typora source mode, sidebar and application chrome are included.
-- No remote fonts, images or network requests are used by the themes.
+- 阅读模式与实时预览使用一致的排版和视觉语言。
+- 标题使用具有编辑感的衬线字体，正文使用安静清晰的无衬线字体。
+- 引用、表格、代码块、任务列表和脚注均经过完整设计。
+- 荧光高亮只覆盖文字下半部分，更接近真实记号笔划过的效果。
+- 支持 Obsidian 双链、失效链接、别名、嵌入笔记、反向链接和出链。
+- 覆盖 Obsidian 工作区、笔记属性、搜索、关系图谱、Canvas 和打印样式。
+- 覆盖 Typora 源代码模式、侧边栏和应用界面样式。
+- 主题不加载远程字体或图片，不会发起网络请求。
 
-## Install in Obsidian
+## 在 Obsidian 中安装
 
-### From a release
+### 从 GitHub Release 安装
 
-1. Download `manifest.json` and `theme.css` from the latest release.
-2. Create `<your-vault>/.obsidian/themes/Esther Inspired/`.
-3. Put both files in that folder.
-4. Open **Settings → Appearance → Themes** and select **Esther Inspired**.
+1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `manifest.json` 和 `theme.css`。
+2. 在知识库中创建以下文件夹：
 
-The theme is prepared for the Obsidian Community Themes directory but has not
-yet been submitted to the directory.
+```text
+<你的知识库>/.obsidian/themes/Esther Inspired/
+```
 
-## Install in Typora
+3. 将 `manifest.json` 和 `theme.css` 放入该文件夹。
+4. 打开 **设置 → 外观 → 主题**，选择 **Esther Inspired**。
 
-1. Download `esther-inspired-typora-1.1.9.zip` from the latest release.
-2. Extract these items into Typora's theme folder:
+主题已经按照 Obsidian 社区主题目录的要求完成整理，但目前尚未提交到官方主题目录。
+
+## 在 Typora 中安装
+
+1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.9.zip`。
+2. 解压后，将以下文件和文件夹放入 Typora 主题文件夹：
 
 ```text
 esther-inspired-paper.css
@@ -65,43 +66,39 @@ esther-inspired-midnight.css
 esther/
 ```
 
-3. Restart Typora.
-4. Choose **Themes → Esther Inspired Paper** or **Esther Inspired Midnight**.
+3. 重新启动 Typora。
+4. 在主题菜单中选择 **Esther Inspired Paper** 或 **Esther Inspired Midnight**。
 
-On macOS, the usual theme folder is:
+macOS 中常见的 Typora 主题文件夹位置为：
 
 ```text
 ~/Library/Application Support/abnerworks.Typora/themes/
 ```
 
-The themes were designed and visually tested on macOS. Other desktop platforms
-use fallback system fonts and may have small differences in application chrome.
+本主题已在 macOS 上完成设计和实际效果测试。Windows 与 Linux 会使用系统备用字体，应用界面的细节可能略有不同。
 
-## Repository layout
+## 仓库结构
 
 ```text
-theme.css                 Obsidian theme
-manifest.json             Obsidian metadata
-screenshot.png            512 × 288 Obsidian store screenshot
-typora/                    Typora light/dark themes and shared styles
-assets/                    Full-size light/dark screenshots
-examples/                  Markdown showcase document
-submission/                Prepared official-directory materials
+theme.css                 Obsidian 主题样式
+manifest.json             Obsidian 主题信息
+screenshot.png            512 × 288 的 Obsidian 商店展示图
+typora/                    Typora 浅色、深色主题及共用样式
+assets/                    两个平台的完整浅色、深色截图
+examples/                  Markdown 主题展示案例
+submission/                两个平台的官方目录投稿材料
 ```
 
-## Attribution and license
+## 署名与许可证
 
-Adapted from **Esther Design System** by **ESTHER不二 (esthersjw)**. The source
-project and this adaptation are distributed under
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+本项目改编自 **ESTHER不二（esthersjw）**创作的 [Esther Design System](https://github.com/esthersjw/esther-design-system)。原项目和本改编主题均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可证发布。
 
-- Attribution is required.
-- Commercial use is not permitted.
-- Shared adaptations must use the same license.
-- Do not imply endorsement by the original creator.
+使用和分享本主题时必须遵守以下条件：
 
-See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- 必须署名原作者 ESTHER不二（esthersjw）。
+- 必须提供原项目与许可证链接，并说明主题经过改编。
+- 不得用于商业目的。
+- 修改或继续改编后，必须使用相同许可证发布。
+- 不得暗示原作者对本项目进行了认可、赞助或官方发布。
 
-## 中文授权说明
-
-本项目是基于 Esther Design System 视觉语言制作的**非官方改编主题**，必须署名原作者 **ESTHER不二（esthersjw）**，禁止商用，修改后仍须以 CC BY-NC-SA 4.0 协议分享。本项目不代表原作者官方发布或认可。
+完整说明请查看 [LICENSE](LICENSE) 和[第三方来源声明](THIRD_PARTY_NOTICES.md)。
