@@ -43,6 +43,12 @@
 
 ## 在 Obsidian 中安装
 
+### 从社区主题目录安装
+
+1. 打开 **设置 → 外观 → 主题 → 管理**。
+2. 搜索 **Esther Inspired**。
+3. 选择 **安装并使用**。
+
 ### 从 GitHub Release 安装
 
 1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `manifest.json` 和 `theme.css`。
@@ -55,11 +61,17 @@
 3. 将 `manifest.json` 和 `theme.css` 放入该文件夹。
 4. 打开 **设置 → 外观 → 主题**，选择 **Esther Inspired**。
 
-主题已经按照 Obsidian 社区主题目录的要求完成整理，但目前尚未提交到官方主题目录。
+主题已发布到 [Obsidian 社区主题目录](https://community.obsidian.md/themes/esther-inspired)。
+
+### 自定义
+
+- 主题会跟随 Obsidian 的浅色或深色模式自动切换。
+- 可以直接使用 Obsidian 的字体与界面缩放设置。
+- 安装可选的 **Style Settings** 社区插件后，可以调整正文阅读宽度，并开启紧凑界面模式。
 
 ## 在 Typora 中安装
 
-1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.9.zip`。
+1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.10.zip`。
 2. 解压后，将以下文件和文件夹放入 Typora 主题文件夹：
 
 ```text
@@ -104,3 +116,17 @@ submission/                两个平台的官方目录投稿材料
 - 不得暗示原作者对本项目进行了认可、赞助或官方发布。
 
 完整说明请查看 [LICENSE](LICENSE) 和[第三方来源声明](THIRD_PARTY_NOTICES.md)。
+
+## English overview
+
+Esther Inspired is an unofficial, non-commercial theme for Chinese long-form writing in Obsidian and Typora. It combines warm paper and midnight palettes with a clear editorial hierarchy, quotation cards, half-height marker highlights, wiki links, backlinks, tables, tasks, and code styling. It does not load remote assets or collect telemetry.
+
+### Install in Obsidian
+
+Open **Settings → Appearance → Themes → Manage**, search for **Esther Inspired**, and select **Install and use**. The theme supports both light and dark modes.
+
+For optional customization, install the **Style Settings** community plugin to change the reading width or enable the compact interface. Standard Obsidian font and interface scaling settings are also supported.
+
+### License and attribution
+
+This is an unofficial adaptation inspired by [Esther Design System](https://github.com/esthersjw/esther-design-system) by **ESTHER不二 (esthersjw)**. It is not affiliated with or endorsed by the original creator. The theme is distributed under [CC BY-NC-SA 4.0](LICENSE): attribution is required, commercial use is prohibited, and adaptations must use the same license.

@@ -22,7 +22,7 @@ Repository: https://github.com/lisitan/esther-obsidian-typora-themes
 > tables and code blocks. Unofficial non-commercial adaptation of Esther Design
 > System by ESTHER不二 (esthersjw), distributed under CC BY-NC-SA 4.0.
 
-Submit through: https://community.obsidian.md/themes/new
+Published listing: https://community.obsidian.md/themes/esther-inspired
 
 Before submission, disclose the third-party source and license during review.
 Obtaining written permission from the original creator is recommended because

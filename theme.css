@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.9
+ * Esther Inspired for Obsidian 1.1.10
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -386,29 +386,29 @@ body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
   font-weight: 750;
 }
 
-.workspace-split.mod-vertical > .workspace-tabs,
-.workspace-split.mod-vertical > .workspace-leaf,
-.workspace-split.mod-left-split,
-.workspace-split.mod-right-split,
-.workspace-tabs,
-.workspace-leaf-content {
-  border-inline-color: transparent !important;
-  outline: 0 !important;
-  box-shadow: none !important;
+body .workspace-split.mod-vertical > .workspace-tabs,
+body .workspace-split.mod-vertical > .workspace-leaf,
+body .workspace-split.mod-left-split,
+body .workspace-split.mod-right-split,
+body .workspace-tabs,
+body .workspace-leaf-content {
+  border-inline-color: transparent;
+  outline: 0;
+  box-shadow: none;
 }
 
-.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-  border-inline-color: transparent !important;
-  background-color: transparent !important;
+body .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+body .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  border-inline-color: transparent;
+  background-color: transparent;
 }
 
-.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:hover,
-.workspace-split.mod-left-split > .workspace-leaf-resize-handle:hover,
-.workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
-  border-inline-color: var(--esther-border-strong) !important;
-  background-color: var(--esther-border-strong) !important;
+body .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:hover,
+body .workspace-split.mod-left-split > .workspace-leaf-resize-handle:hover,
+body .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
+  border-inline-color: var(--esther-border-strong);
+  background-color: var(--esther-border-strong);
   opacity: 0.45;
 }
 
@@ -518,15 +518,13 @@ body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
 .markdown-source-view.mod-cm6 span.cm-highlight {
   padding: 0 0.14em;
   color: var(--esther-ink);
-  background-color: transparent !important;
+  background-color: transparent;
   background-image: linear-gradient(
     to bottom,
     transparent 0 56%,
     var(--esther-yellow) 56% 100%
-  ) !important;
+  );
   border-radius: 0;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
 }
 
 .markdown-rendered a,
@@ -534,9 +532,8 @@ body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
 .cm-link,
 .internal-link,
 .external-link {
-  text-decoration-color: var(--esther-yellow);
-  text-decoration-thickness: 0.14em;
-  text-underline-offset: 0.16em;
+  text-decoration: none;
+  box-shadow: inset 0 -0.12em 0 var(--esther-yellow);
 }
 
 .markdown-rendered a:hover,
@@ -552,10 +549,8 @@ body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
   border-radius: 0.28em;
   color: var(--esther-blue);
   font-weight: 650;
-  text-decoration-line: underline;
-  text-decoration-color: var(--esther-yellow);
-  text-decoration-thickness: 0.14em;
-  text-underline-offset: 0.16em;
+  text-decoration: none;
+  box-shadow: inset 0 -0.12em 0 var(--esther-yellow);
 }
 
 .markdown-rendered .internal-link:hover,
@@ -569,14 +564,14 @@ body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link.is-unresolved {
   color: var(--esther-red);
   background: var(--esther-link-unresolved-bg);
-  text-decoration-color: var(--esther-red);
-  text-decoration-style: dotted;
-  text-decoration-thickness: 0.1em;
+  border-bottom: 0.1em dotted var(--esther-red);
+  box-shadow: none;
 }
 
 .markdown-rendered .internal-link[data-href*="#"],
 .markdown-rendered .internal-link[data-href*="^"] {
-  text-decoration-style: dashed;
+  border-bottom: 0.1em dashed currentColor;
+  box-shadow: none;
 }
 
 /* Lists and tasks */
@@ -610,11 +605,10 @@ input[type="checkbox"]:checked,
 .task-list-item.is-checked,
 .HyperMD-task-line[data-task="x"] {
   color: var(--text-faint);
-  text-decoration-color: var(--esther-red);
 }
 
 /* Designed pull quote */
-.markdown-rendered blockquote {
+body .markdown-rendered blockquote {
   position: relative;
   min-height: 2.4em;
   margin: 1.7em 0;
@@ -623,21 +617,19 @@ input[type="checkbox"]:checked,
   border: 0;
   border-radius: 18px;
   color: var(--text-muted);
-  background-color: var(--blockquote-background-color) !important;
-  background-image: none !important;
+  background-color: var(--blockquote-background-color);
+  background-image: none;
   box-shadow: 0 10px 34px var(--esther-shadow);
 }
 
-.markdown-rendered blockquote::before {
+body .markdown-rendered blockquote::before {
   content: "";
   position: absolute;
   top: 1em;
   left: 1.75em;
   width: 3rem;
   height: 2.25rem;
-  background: var(--esther-yellow);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath fill='%23f4d758' d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .markdown-rendered blockquote > :first-child {
@@ -648,31 +640,31 @@ input[type="checkbox"]:checked,
   margin-bottom: 0;
 }
 
-.markdown-rendered blockquote > * {
-  background-color: transparent !important;
-  background-image: none !important;
+body .markdown-rendered blockquote > * {
+  background-color: transparent;
+  background-image: none;
 }
 
-.markdown-rendered blockquote blockquote {
+body .markdown-rendered blockquote blockquote {
   margin: 1em 0 0;
-  background-color: var(--blockquote-background-color) !important;
+  background-color: var(--blockquote-background-color);
   box-shadow: none;
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) {
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) {
   box-sizing: border-box;
   min-height: 1.82em;
   padding-right: 1.75em;
   padding-left: 6.5em;
   color: var(--text-muted);
-  background-color: var(--blockquote-background-color) !important;
-  background-image: none !important;
+  background-color: var(--blockquote-background-color);
+  background-image: none;
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout).cm-active,
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):hover {
-  background-color: var(--blockquote-background-color) !important;
-  background-image: none !important;
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout).cm-active,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):hover {
+  background-color: var(--blockquote-background-color);
+  background-image: none;
 }
 
 .markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote:not(.HyperMD-callout),
@@ -693,9 +685,7 @@ input[type="checkbox"]:checked,
   width: 3rem;
   height: 2.25rem;
   margin-right: 0.75rem;
-  background: var(--esther-yellow);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath fill='%23f4d758' d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
   vertical-align: -0.55em;
   pointer-events: none;
 }
