@@ -1,0 +1,819 @@
+/*
+ * Shared styles for Esther Inspired Paper and Esther Inspired Midnight.
+ * Adapted from Esther Design System by ESTHER不二 (esthersjw).
+ * CC BY-NC-SA 4.0 — https://creativecommons.org/licenses/by-nc-sa/4.0/
+ */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  min-height: 100%;
+  color: var(--text-color);
+  fill: currentColor;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+.popover,
+.context-menu {
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.82;
+  letter-spacing: 0.012em;
+}
+
+::selection {
+  color: var(--select-text-color);
+  background: var(--select-text-bg-color);
+}
+
+#write {
+  box-sizing: border-box;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 52px 64px 120px;
+}
+
+@media only screen and (min-width: 1440px) {
+  #write {
+    max-width: 920px;
+    padding-top: 68px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #write {
+    padding: 34px 26px 88px;
+  }
+
+  body {
+    font-size: 0.96rem;
+  }
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+  margin: 1em 0;
+}
+
+p {
+  color: var(--text-color);
+}
+
+strong {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+em {
+  color: var(--text-muted);
+}
+
+mark {
+  margin: 0 0.08em;
+  padding: 0.02em 0.18em;
+  color: var(--heading-color);
+  background: linear-gradient(transparent 52%, var(--accent-color) 52%);
+}
+
+small {
+  color: var(--text-muted);
+}
+
+/* Serif headings create the editorial rhythm in the source design system. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  clear: both;
+  margin: 2.1em 0 0.72em;
+  color: var(--heading-color);
+  font-family: "Noto Serif SC", "Songti SC", STSong, "Times New Roman", serif;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  margin-top: 0.55em;
+  font-size: clamp(2.15rem, 6vw, 3.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: 0.42rem;
+  margin-top: 0.5rem;
+  border-radius: 999px 52% 999px 46%;
+  background: var(--accent-color);
+  transform: rotate(-1.5deg);
+}
+
+h2 {
+  padding-bottom: 0.42em;
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(1.55rem, 4vw, 2rem);
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.48em;
+  height: 0.48em;
+  margin-right: 0.46em;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0.25em 0.22em 0 var(--accent-color);
+  vertical-align: 0.08em;
+}
+
+h3 {
+  font-size: 1.35rem;
+  color: var(--primary-color);
+}
+
+h4 {
+  font-size: 1.12rem;
+}
+
+h5 {
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  font-size: 0.82em;
+}
+
+.md-heading .md-meta,
+.md-heading .md-before,
+.md-heading .md-after {
+  color: var(--text-faint);
+}
+
+a,
+.md-def-link {
+  color: var(--primary-color);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 0.16em;
+  text-underline-offset: 0.16em;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+a:hover,
+.md-def-link:hover {
+  color: var(--heading-color);
+  background: var(--accent-soft);
+  text-decoration-color: var(--accent-color);
+}
+
+hr {
+  width: 42%;
+  height: 5px;
+  margin: 3.2rem auto !important;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 14px 0 0 var(--primary-color), -14px 0 0 var(--danger-color);
+  opacity: 0.78;
+}
+
+ul,
+ol {
+  padding-left: 1.65em;
+}
+
+li {
+  margin: 0.34em 0;
+  padding-left: 0.16em;
+}
+
+ul > li::marker {
+  color: var(--danger-color);
+  font-size: 0.88em;
+}
+
+ol > li::marker {
+  color: var(--primary-color);
+  font-family: "Fraunces", "Noto Serif SC", "Songti SC", serif;
+  font-weight: 800;
+}
+
+li > ul,
+li > ol {
+  margin: 0.2em 0;
+}
+
+.md-task-list-item > input {
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: -1.45em;
+  margin-right: 0.4em;
+  accent-color: var(--primary-color);
+}
+
+.md-task-list-item.task-list-done {
+  color: var(--text-faint);
+}
+
+/* A designed pull-quote card replaces Typora's default left rule. */
+blockquote {
+  position: relative;
+  min-height: 2.3em;
+  margin: 1.7em 0;
+  padding: 1.55em 1.75em 1.45em 3.7em;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  color: var(--text-muted);
+  background: var(--surface-strong);
+  box-shadow: 0 10px 34px var(--shadow-color);
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  top: 0.02em;
+  left: 0.28em;
+  color: var(--accent-color);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+blockquote p {
+  color: inherit;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote blockquote {
+  margin: 1em 0 0;
+  box-shadow: none;
+  background: var(--surface-soft);
+}
+
+table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 6px 22px var(--shadow-color);
+  word-break: normal;
+}
+
+thead {
+  background: var(--primary-soft);
+}
+
+th,
+td {
+  padding: 0.72em 0.9em;
+  border: 0;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  color: var(--heading-color);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 800;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 0;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--surface-soft);
+}
+
+tbody tr:hover {
+  background: var(--accent-soft);
+}
+
+code,
+tt,
+kbd,
+samp,
+.md-fences {
+  font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+code,
+tt {
+  margin: 0 0.08em;
+  padding: 0.16em 0.38em;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--inline-code-text);
+  background: var(--inline-code-bg);
+  font-size: 0.88em;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.08em 0.44em;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  color: var(--heading-color);
+  background: var(--surface-strong);
+  font-size: 0.82em;
+  line-height: 1.45;
+  box-shadow: 0 1px 2px var(--shadow-color);
+}
+
+.md-fences {
+  margin: 1.5em 0;
+  padding: 1.15em 1.2em 1.25em;
+  border: 0;
+  border-radius: 15px;
+  color: var(--code-text);
+  background: var(--surface-code);
+  box-shadow: 0 12px 30px var(--shadow-color);
+  font-size: 0.88rem;
+  line-height: 1.68;
+}
+
+.md-fences code {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: inherit;
+}
+
+.md-fences::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin: -0.35em 0 0.9em;
+  border-radius: 50%;
+  background: var(--danger-color);
+  box-shadow: 16px 0 0 var(--accent-color), 32px 0 0 #4ade80;
+}
+
+.md-fences .CodeMirror-code {
+  color: var(--code-text);
+}
+
+.md-fences .CodeMirror-gutters {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+}
+
+.md-fences .CodeMirror-linenumber,
+.md-fences .CodeMirror-scrollbar-filler,
+.md-fences .CodeMirror-gutter-filler {
+  color: var(--code-muted);
+  background: transparent;
+}
+
+.md-fences .CodeMirror-selected,
+.md-fences .CodeMirror-line::selection,
+.md-fences .CodeMirror-line > span::selection,
+.md-fences .CodeMirror-line > span > span::selection {
+  background: rgba(104, 169, 236, 0.25) !important;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+  color: #88909f;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-operator {
+  color: #ff8494;
+}
+
+.cm-s-inner .cm-string,
+.cm-s-inner .cm-string-2 {
+  color: #f4d758;
+}
+
+.cm-s-inner .cm-number,
+.cm-s-inner .cm-atom {
+  color: #b99af7;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-s-inner .cm-variable-3 {
+  color: #e7e3d9;
+}
+
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-attribute,
+.cm-s-inner .cm-builtin {
+  color: #68a9ec;
+}
+
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-meta {
+  color: #ff7082;
+}
+
+.cm-s-inner .cm-qualifier,
+.cm-s-inner .cm-type {
+  color: #4ade80;
+}
+
+.code-tooltip,
+.md-hover-tip {
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  background: var(--surface-strong);
+  box-shadow: 0 12px 32px var(--shadow-color);
+}
+
+.code-tooltip-content,
+.code-tooltip-content .md-fences {
+  color: var(--code-text);
+  background: var(--surface-code);
+}
+
+.md-math-block,
+.mathjax-block {
+  margin: 1.5em 0;
+  padding: 1em 1.25em;
+  border-radius: 14px;
+  color: var(--heading-color);
+  background: var(--surface-soft);
+}
+
+.md-inline-math {
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px var(--shadow-color);
+}
+
+p > .md-image:only-child img,
+p > img:only-child {
+  display: block;
+  margin: 1.7em auto;
+}
+
+.md-image > .md-meta {
+  padding: 0.1em 0.34em;
+  border-radius: 5px;
+  color: var(--text-muted);
+  background: var(--surface-soft);
+}
+
+.md-toc {
+  margin: 1.8em 0;
+  padding: 1.25em 1.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.md-toc::before {
+  content: "CONTENTS";
+  display: block;
+  margin-bottom: 0.7em;
+  color: var(--danger-color);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.md-toc-content {
+  color: var(--text-muted);
+}
+
+.md-toc-h1 .md-toc-inner {
+  font-weight: 800;
+}
+
+.footnotes {
+  margin-top: 4em;
+  padding-top: 1.4em;
+  border-top: 2px solid var(--accent-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.md-footnote {
+  color: var(--danger-color);
+  background: var(--danger-soft);
+}
+
+.md-meta,
+.md-expand,
+.md-htmlblock,
+.md-comment,
+.md-link-title,
+.md-url {
+  color: var(--text-faint);
+}
+
+.md-alert-text-note,
+.md-alert-text-tip {
+  color: var(--primary-color);
+}
+
+.md-alert-text-warning {
+  color: #b79600;
+}
+
+.md-alert-text-caution,
+.md-alert-text-important {
+  color: var(--danger-color);
+}
+
+/* Sidebar and application chrome */
+#typora-sidebar {
+  color: var(--control-text-color);
+  border-right: var(--window-border);
+  background: var(--side-bar-bg-color);
+}
+
+.sidebar-tabs {
+  border-bottom-color: var(--border-color);
+}
+
+.sidebar-tabs:hover,
+.file-list-item:hover,
+.outline-item:hover,
+.ty-side-sort-btn:hover {
+  color: var(--item-hover-text-color);
+  background: var(--item-hover-bg-color);
+}
+
+.file-list-item {
+  border-bottom-color: var(--border-color);
+}
+
+.file-list-item.active {
+  color: var(--active-file-text-color);
+  border-left: 4px solid var(--active-file-border-color);
+  background: var(--active-file-bg-color);
+}
+
+.file-list-item-summary,
+.file-list-item-time,
+.file-list-item-parent-loc,
+.outline-label {
+  color: var(--text-faint);
+}
+
+.file-list-item.active .file-list-item-file-name,
+.outline-item-active > .outline-label {
+  color: var(--active-file-text-color);
+  font-weight: 700;
+}
+
+.outline-item-active {
+  background: var(--active-file-bg-color);
+}
+
+.ty-sidebar-search-panel,
+.searchpanel-search-option-btn,
+.ty-search-item,
+#file-library-search-input {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background: var(--surface);
+}
+
+.search-hit-text,
+.search-hit-text.md-search-hit {
+  color: var(--select-text-color) !important;
+  background: var(--search-select-bg-color) !important;
+}
+
+.megamenu-menu,
+#megamenu-content,
+.modal-content,
+.dropdown-menu,
+.context-menu,
+.popover {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background: var(--surface-strong);
+}
+
+.menu-style-btn.active,
+.long-btn:hover,
+.dropdown-menu > li > a:hover,
+.context-menu.dropdown-menu > li > a:hover {
+  color: var(--item-hover-text-color);
+  background: var(--item-hover-bg-color);
+}
+
+.btn-primary {
+  color: #fefcf6;
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  filter: brightness(1.08);
+}
+
+input,
+textarea,
+select,
+.form-control {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background: var(--surface);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+#md-notification,
+.typora-quick-open-item,
+#typora-quick-open {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background: var(--surface-strong);
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+  background: var(--active-file-bg-color);
+}
+
+/* Source mode stays consistent with the reading view. */
+#typora-source,
+#typora-source .CodeMirror,
+#typora-source .CodeMirror-scroll {
+  color: var(--text-color);
+  background: transparent;
+}
+
+#typora-source .CodeMirror-lines {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 52px 64px 120px;
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+#typora-source .CodeMirror-gutters {
+  border-right-color: var(--border-color);
+  background: var(--surface-soft);
+}
+
+#typora-source .cm-header,
+#typora-source .cm-strong {
+  color: var(--heading-color);
+  font-weight: 800;
+}
+
+#typora-source .cm-link,
+#typora-source .cm-url {
+  color: var(--primary-color);
+}
+
+#typora-source .cm-quote,
+#typora-source .cm-comment {
+  color: var(--text-muted);
+}
+
+#typora-source .cm-formatting,
+#typora-source .cm-meta {
+  color: var(--danger-color);
+}
+
+.CodeMirror-cursor {
+  border-left-color: var(--danger-color) !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected {
+  background: var(--search-select-bg-color) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: var(--border-strong);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+  background-clip: padding-box;
+}
+
+@media print {
+  html,
+  body {
+    background: #fefcf6 !important;
+  }
+
+  #write {
+    max-width: none;
+    padding: 0;
+    color: #1a1a2e;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    color: #1a1a2e !important;
+  }
+
+  p,
+  li,
+  td,
+  th {
+    color: #1a1a2e !important;
+  }
+
+  a {
+    color: #2b7fd8 !important;
+  }
+
+  blockquote,
+  table,
+  .md-toc {
+    box-shadow: none;
+  }
+}

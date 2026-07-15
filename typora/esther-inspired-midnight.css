@@ -1,0 +1,55 @@
+/*
+ * Esther Inspired Midnight — a dark Typora theme
+ * Adapted from Esther Design System by ESTHER不二 (esthersjw)
+ * Source: https://github.com/esthersjw/esther-design-system
+ * License: CC BY-NC-SA 4.0 (non-commercial, attribution, share-alike)
+ */
+
+@import "./esther/esther-base.css";
+
+:root {
+  --bg-color: #151821;
+  --surface: #1b1f29;
+  --surface-strong: #202531;
+  --surface-soft: #11141c;
+  --surface-code: #0d1117;
+  --side-bar-bg-color: #10131a;
+  --text-color: #ddd9cf;
+  --text-muted: #aaa9a8;
+  --text-faint: #777b86;
+  --heading-color: #f1ede3;
+  --primary-color: #68a9ec;
+  --primary-soft: rgba(104, 169, 236, 0.13);
+  --accent-color: #f4d758;
+  --accent-soft: rgba(244, 215, 88, 0.18);
+  --danger-color: #ff7082;
+  --danger-soft: rgba(255, 112, 130, 0.12);
+  --border-color: #303645;
+  --border-strong: #454c5c;
+  --shadow-color: rgba(0, 0, 0, 0.28);
+  --code-text: #e7e3d9;
+  --code-muted: #9ca4b4;
+  --inline-code-bg: #292331;
+  --inline-code-text: #ff8b9a;
+  --select-text-bg-color: #f4d758;
+  --select-text-color: #171922;
+  --control-text-color: #a1a5ad;
+  --control-text-hover-color: #f1ede3;
+  --item-hover-bg-color: rgba(244, 215, 88, 0.10);
+  --item-hover-text-color: #f1ede3;
+  --active-file-bg-color: rgba(104, 169, 236, 0.14);
+  --active-file-text-color: #8bc0f4;
+  --active-file-border-color: #68a9ec;
+  --window-border: 1px solid #303645;
+  --rawblock-edit-panel-bd: #303645;
+  --search-select-bg-color: rgba(244, 215, 88, 0.36);
+  --focus-ring: rgba(104, 169, 236, 0.34);
+  color-scheme: dark;
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at 84% -10%, rgba(43, 127, 216, 0.12), transparent 30rem),
+    var(--bg-color);
+}
