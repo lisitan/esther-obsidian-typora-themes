@@ -4,6 +4,8 @@
 
 这是一套同时适用于 **Obsidian** 和 **Typora** 的中文写作主题。整体保持温暖、克制、带一点手作感：蓝色负责结构，黄色负责强调，红色只做少量点缀。
 
+![Esther Inspired：Obsidian 与 Typora 中文写作主题总览](assets/esther-inspired-overview.png)
+
 仓库包含一套可自动切换明暗模式的 Obsidian 主题，以及两套 Typora 主题：
 
 - **Obsidian — Esther Inspired**：跟随 Obsidian 的浅色与深色模式自动切换完整配色。
