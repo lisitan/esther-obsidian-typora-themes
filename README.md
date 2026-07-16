@@ -71,7 +71,7 @@
 
 ## 在 Typora 中安装
 
-1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.12.zip`。
+1. 从[最新版本](https://github.com/lisitan/esther-obsidian-typora-themes/releases/latest)下载 `esther-inspired-typora-1.1.13.zip`。
 2. 解压后，将以下文件和文件夹放入 Typora 主题文件夹：
 
 ```text

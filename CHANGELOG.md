@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.13 — 2026-07-16
+
+- Fixed system notices and plugin-update progress messages whose text could become unreadable on light surfaces.
+- Added explicit light and dark notice colors, borders, close-button treatment, and Esther blue progress feedback.
+
 ## 1.1.12 — 2026-07-15
 
 - Redesigned Obsidian fenced code blocks with separate Apple-inspired light and dark palettes in Reading View and Live Preview.
