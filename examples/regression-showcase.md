@@ -112,6 +112,16 @@ status: testing
 
 行内代码测试：`const theme = "Esther Inspired";`
 
+无语言代码块：
+
+```
+Esther Inspired
+中文、English、0123456789
+plain code without syntax highlighting
+```
+
+CSS 代码块：
+
 ```css
 :root {
   --blue: #236dbb;
@@ -126,8 +136,11 @@ status: testing
 }
 ```
 
+JavaScript 代码块：
+
 ```javascript
 function regressionTest(theme) {
+  // 注释应该清晰，但可以弱于正文代码。
   const checks = ["cursor", "active-line", "horizontal-scroll"];
   return checks.every((item) => theme.supports(item));
 }
@@ -135,11 +148,25 @@ function regressionTest(theme) {
 const veryLongLine = "This line is intentionally long to verify that fenced code blocks scroll horizontally instead of breaking the surrounding layout or hiding the editing cursor.";
 ```
 
+JSON 代码块：
+
+```json
+{
+  "name": "Esther Inspired",
+  "version": "regression-test",
+  "modes": ["light", "dark"],
+  "enabled": true,
+  "contrastTarget": 4.5
+}
+```
+
 测试动作：
 
-1. 点击代码块的第一行、中间行和最后一行。
-2. 检查光标、当前行背景、语言标识和横向滚动。
-3. 分别在浅色和深色模式下输入中文、英文和符号。
+1. 先点击代码块外部，确认代码框、工具栏和窗口圆点正常显示。
+2. 再点击代码块的第一行、中间行和最后一行。
+3. 检查光标、当前行背景、语言标识和横向滚动。
+4. 对比注释、关键字、字符串、数字、变量和属性是否容易辨认。
+5. 分别在浅色和深色模式下输入中文、英文和符号。
 
 ## 07 / Obsidian 双链与嵌入
 

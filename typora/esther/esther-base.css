@@ -446,46 +446,49 @@ kbd {
 
 .cm-s-inner .cm-comment,
 .cm-s-inner.cm-comment {
-  color: #88909f;
+  color: var(--code-comment);
   font-style: italic;
 }
 
-.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-keyword {
+  color: var(--code-keyword);
+}
+
 .cm-s-inner .cm-operator {
-  color: #ff8494;
+  color: var(--code-operator);
 }
 
 .cm-s-inner .cm-string,
 .cm-s-inner .cm-string-2 {
-  color: #f4d758;
+  color: var(--code-string);
 }
 
 .cm-s-inner .cm-number,
 .cm-s-inner .cm-atom {
-  color: #b99af7;
+  color: var(--code-number);
 }
 
 .cm-s-inner .cm-def,
 .cm-s-inner .cm-variable,
 .cm-s-inner .cm-variable-2,
 .cm-s-inner .cm-variable-3 {
-  color: #e7e3d9;
+  color: var(--code-variable);
 }
 
 .cm-s-inner .cm-property,
 .cm-s-inner .cm-attribute,
 .cm-s-inner .cm-builtin {
-  color: #68a9ec;
+  color: var(--code-property);
 }
 
 .cm-s-inner .cm-tag,
 .cm-s-inner .cm-meta {
-  color: #ff7082;
+  color: var(--code-tag);
 }
 
 .cm-s-inner .cm-qualifier,
 .cm-s-inner .cm-type {
-  color: #4ade80;
+  color: var(--code-type);
 }
 
 .code-tooltip,

@@ -33,6 +33,15 @@
   --code-border: #303645;
   --code-cursor: #f4d758;
   --code-active-line: rgba(244, 215, 88, 0.07);
+  --code-comment: #9ca4b4;
+  --code-keyword: #e997d4;
+  --code-operator: #ff8b9a;
+  --code-string: #8ed39f;
+  --code-number: #c3a6ff;
+  --code-variable: #e7e3d9;
+  --code-property: #77d4dd;
+  --code-tag: #ff8b9a;
+  --code-type: #8ed39f;
   --inline-code-bg: #292331;
   --inline-code-text: #ff8b9a;
   --select-text-bg-color: #f4d758;

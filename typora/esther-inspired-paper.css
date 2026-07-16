@@ -33,6 +33,15 @@
   --code-muted: #727887;
   --code-cursor: #156fd1;
   --code-active-line: rgba(43, 127, 216, 0.08);
+  --code-comment: #5f6675;
+  --code-keyword: #8a2d75;
+  --code-operator: #b4233a;
+  --code-string: #2f6f3e;
+  --code-number: #6346a5;
+  --code-variable: #252832;
+  --code-property: #006d77;
+  --code-tag: #a1283e;
+  --code-type: #2f6f3e;
   --inline-code-bg: #f5efe1;
   --inline-code-text: #b43c50;
   --select-text-bg-color: #f4d758;
