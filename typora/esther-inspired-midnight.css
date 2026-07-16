@@ -29,6 +29,10 @@
   --shadow-color: rgba(0, 0, 0, 0.28);
   --code-text: #e7e3d9;
   --code-muted: #9ca4b4;
+  --code-toolbar: #1b1f29;
+  --code-border: #303645;
+  --code-cursor: #f4d758;
+  --code-active-line: rgba(244, 215, 88, 0.07);
   --inline-code-bg: #292331;
   --inline-code-text: #ff8b9a;
   --select-text-bg-color: #f4d758;
