@@ -762,6 +762,11 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   box-shadow: 0 6px 22px var(--esther-shadow);
 }
 
+/* Table cells use nested editors and must not inherit document page padding. */
+.markdown-source-view.mod-cm6 .cm-table-widget .cm-content {
+  padding: 0;
+}
+
 /* Inline and fenced code */
 .markdown-rendered code,
 .markdown-source-view.mod-cm6 .cm-inline-code:not(.cm-formatting) {
