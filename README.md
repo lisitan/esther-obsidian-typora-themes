@@ -1,7 +1,5 @@
 # Esther Inspired：Obsidian 与 Typora 主题
 
-> 本项目是基于 [Esther Design System](https://github.com/esthersjw/esther-design-system) 视觉语言制作的非官方、非商业改编主题。原设计系统作者为 **ESTHER不二（esthersjw）**。本项目与原作者没有隶属关系，也不代表原作者的官方发布或认可。
-
 这是一套同时适用于 **Obsidian** 和 **Typora** 的中文写作主题。整体保持温暖、克制、带一点手作感：蓝色负责结构，黄色负责强调，红色只做少量点缀。
 
 ![Esther Inspired：Obsidian 与 Typora 中文写作主题总览](assets/esther-inspired-overview.png)
