@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.16 — 2026-07-16
+
+- Fixed Obsidian Live Preview tables whose nested cell editors inherited the document's vertical page padding and created oversized rows.
+
 ## 1.1.15 — 2026-07-16
 
 - Fixed unreadable ribbon and icon-control tooltips by explicitly pairing their text color with the theme surface.
