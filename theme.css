@@ -89,7 +89,7 @@ body {
   --link-external-decoration: underline;
   --link-unresolved-decoration-style: dotted;
   --list-indent: 1.75em;
-  --list-spacing: 0.36em;
+  --list-spacing: 0.08em;
   --table-border-width: 1px;
   --table-header-weight: 800;
   --blockquote-border-thickness: 0;
@@ -433,14 +433,14 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
   margin-inline: auto;
 }
 
-.markdown-source-view.mod-cm6 .cm-content,
+.markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller > .cm-sizer > .cm-content,
 .markdown-reading-view .markdown-preview-sizer {
   padding-top: 48px;
   padding-bottom: 110px;
 }
 
 .markdown-rendered,
-.markdown-source-view.mod-cm6 .cm-scroller {
+.markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
   line-height: 1.82;
   letter-spacing: 0.012em;
 }
@@ -590,6 +590,11 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
 }
 
 /* Lists and tasks */
+.markdown-rendered :is(ul, ol),
+.markdown-source-view.mod-cm6 .HyperMD-list-line {
+  line-height: 1.58;
+}
+
 .markdown-rendered ul > li::marker {
   color: var(--esther-red);
   font-size: 0.88em;
@@ -1359,7 +1364,7 @@ body:not(.is-mobile).esther-hover-file-actions
     --h2-size: 1.52em;
   }
 
-  .markdown-source-view.mod-cm6 .cm-content,
+  .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller > .cm-sizer > .cm-content,
   .markdown-reading-view .markdown-preview-sizer {
     padding-top: 28px;
     padding-inline: 22px;
