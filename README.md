@@ -99,7 +99,12 @@ typora/                    Typora 浅色、深色主题及共用样式
 assets/                    两个平台的完整浅色、深色截图
 examples/                  Markdown 主题展示案例
 submission/                两个平台的官方目录投稿材料
+REGRESSION_TEST.md         每次主题修改和发布前必须执行的回归测试规范
 ```
+
+## 回归测试
+
+每次制作、修改或发布主题前，必须按照[回归测试规范](REGRESSION_TEST.md)完成相应测试。实际视觉和交互测试统一使用 [`examples/regression-showcase.md`](examples/regression-showcase.md)，并同时覆盖浅色、深色、阅读和编辑状态。
 
 ## 署名与许可证
 
