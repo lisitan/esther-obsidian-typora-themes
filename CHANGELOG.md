@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.15 — 2026-07-16
+
+- Fixed unreadable ribbon and icon-control tooltips by explicitly pairing their text color with the theme surface.
+- Improved light-mode interaction contrast for links, wiki links, backlinks, badges, and blue buttons.
+
 ## 1.1.14 — 2026-07-16
 
 - Synced Typora fenced code blocks with the Apple-inspired light and dark treatment used in Obsidian.
