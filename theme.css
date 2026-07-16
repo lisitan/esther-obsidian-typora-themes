@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.12
+ * Esther Inspired for Obsidian 1.1.13
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -1236,6 +1236,26 @@ button.mod-cta {
 .suggestion-item.is-selected,
 .menu-item.selected:not(.is-disabled):not(.is-label) {
   background: var(--esther-yellow-soft);
+}
+
+/* System notices and plugin update progress */
+.notice-container .notice {
+  color: var(--text-normal);
+  border: 1px solid var(--esther-border);
+  background: var(--esther-surface-strong);
+  box-shadow: 0 12px 30px var(--esther-shadow);
+}
+
+.notice-container .notice :is(.notice-message, .notice-content) {
+  color: inherit;
+}
+
+.notice-container .notice .notice-progress {
+  background: var(--esther-blue);
+}
+
+.notice-container .notice .notice-close-button {
+  color: var(--text-muted);
 }
 
 .setting-item-heading .setting-item-name,
