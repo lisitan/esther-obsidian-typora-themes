@@ -376,12 +376,20 @@ kbd {
 }
 
 .md-fences {
+  position: relative;
   margin: 1.5em 0;
-  padding: 1.15em 1.2em 1.25em;
-  border: 0;
+  padding: 3.25em 1.2em 1.25em;
+  border: 1px solid var(--code-border);
   border-radius: 15px;
   color: var(--code-text);
-  background: var(--surface-code);
+  background-color: var(--surface-code);
+  background-image: linear-gradient(
+    to bottom,
+    var(--code-toolbar) 0 2.35rem,
+    var(--code-border) 2.35rem 2.4rem,
+    var(--surface-code) 2.4rem 100%
+  );
+  background-repeat: no-repeat;
   box-shadow: 0 12px 30px var(--shadow-color);
   font-size: 0.88rem;
   line-height: 1.68;
@@ -398,13 +406,15 @@ kbd {
 
 .md-fences::before {
   content: "";
-  display: block;
-  width: 9px;
-  height: 9px;
-  margin: -0.35em 0 0.9em;
+  position: absolute;
+  top: 0.86rem;
+  left: 1.2rem;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--danger-color);
-  box-shadow: 16px 0 0 var(--accent-color), 32px 0 0 #4ade80;
+  background: #ff5f57;
+  box-shadow: 17px 0 0 #febc2e, 34px 0 0 #28c840;
 }
 
 .md-fences .CodeMirror-code {
@@ -412,7 +422,7 @@ kbd {
 }
 
 .md-fences .CodeMirror-gutters {
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid var(--code-border);
   background: transparent;
 }
 
@@ -421,6 +431,10 @@ kbd {
 .md-fences .CodeMirror-gutter-filler {
   color: var(--code-muted);
   background: transparent;
+}
+
+.md-fences .CodeMirror-activeline-background {
+  background: var(--code-active-line);
 }
 
 .md-fences .CodeMirror-selected,
@@ -749,7 +763,7 @@ select:focus,
 }
 
 .CodeMirror-cursor {
-  border-left-color: var(--danger-color) !important;
+  border-left: 2px solid var(--code-cursor) !important;
 }
 
 .CodeMirror-selected,

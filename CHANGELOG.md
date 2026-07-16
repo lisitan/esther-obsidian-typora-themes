@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.14 — 2026-07-16
+
+- Synced Typora fenced code blocks with the Apple-inspired light and dark treatment used in Obsidian.
+- Added separate Paper and Midnight code palettes, toolbar bands, traffic-light controls, active-line feedback, and high-contrast cursors.
+- Replaced Typora Paper and Midnight preview images with real screenshots of the updated code blocks.
+
 ## 1.1.13 — 2026-07-16
 
 - Fixed system notices and plugin-update progress messages whose text could become unreadable on light surfaces.

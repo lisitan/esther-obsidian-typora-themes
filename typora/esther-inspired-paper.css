@@ -12,7 +12,7 @@
   --surface: #fffdf8;
   --surface-strong: #ffffff;
   --surface-soft: #faf6eb;
-  --surface-code: #151821;
+  --surface-code: #f7f8fa;
   --side-bar-bg-color: #faf6eb;
   --text-color: #1a1a2e;
   --text-muted: #555568;
@@ -27,8 +27,12 @@
   --border-color: #e8e0cf;
   --border-strong: #d8ccb5;
   --shadow-color: rgba(62, 48, 22, 0.10);
-  --code-text: #ece9df;
-  --code-muted: #a7afbe;
+  --code-toolbar: #eef0f4;
+  --code-border: #d9dde5;
+  --code-text: #252832;
+  --code-muted: #727887;
+  --code-cursor: #156fd1;
+  --code-active-line: rgba(43, 127, 216, 0.08);
   --inline-code-bg: #f5efe1;
   --inline-code-text: #b43c50;
   --select-text-bg-color: #f4d758;
