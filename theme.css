@@ -117,7 +117,7 @@ body.theme-light {
 
   --accent-h: 211;
   --accent-s: 67%;
-  --accent-l: 51%;
+  --accent-l: 43%;
 
   --background-primary: #fefcf6;
   --background-primary-alt: #fffdf8;
@@ -150,8 +150,8 @@ body.theme-light {
 
   --interactive-normal: #fffdf8;
   --interactive-hover: #ffffff;
-  --interactive-accent: #2b7fd8;
-  --interactive-accent-hover: #236dbb;
+  --interactive-accent: #236dbb;
+  --interactive-accent-hover: #1f68b4;
   --interactive-success: #3e9b5f;
 
   --esther-blue: #2b7fd8;
@@ -187,7 +187,7 @@ body.theme-light {
   --h6-color: #626275;
   --bold-color: #17172a;
   --italic-color: #555568;
-  --link-color: #2b7fd8;
+  --link-color: #236dbb;
   --link-color-hover: #17172a;
   --link-unresolved-color: #e84a5f;
   --list-marker-color: #e84a5f;
@@ -562,7 +562,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
 .markdown-rendered .internal-link,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link {
   border-radius: 0.28em;
-  color: var(--esther-blue);
+  color: var(--link-color);
   font-weight: 650;
   text-decoration: none;
   box-shadow: inset 0 -0.12em 0 var(--esther-yellow);
@@ -974,7 +974,7 @@ a.tag {
 
 .backlink-pane .search-result-file-title,
 .outgoing-link-pane .search-result-file-title {
-  color: var(--esther-blue);
+  color: var(--link-color);
   font-family: var(--font-interface-theme);
   font-size: 14px;
   font-weight: 750;
@@ -1038,7 +1038,7 @@ a.tag {
   min-width: 1.7em;
   padding-inline: 0.5em;
   border-radius: 999px;
-  color: var(--esther-blue);
+  color: var(--link-color);
   background: var(--esther-blue-soft);
   font-size: 11px;
   font-weight: 800;
