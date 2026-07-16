@@ -1238,6 +1238,14 @@ button.mod-cta {
   background: var(--esther-yellow-soft);
 }
 
+/* Hover labels in the ribbon and other icon-only controls */
+.tooltip {
+  color: var(--text-normal);
+  border: 1px solid var(--esther-border);
+  background: var(--esther-surface-strong);
+  box-shadow: 0 8px 20px var(--esther-shadow);
+}
+
 /* System notices and plugin update progress */
 .notice-container .notice {
   color: var(--text-normal);
