@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.18 — 2026-07-17
+
+- Restored Obsidian Reading View quote cards to the same spacing, radius, and nesting rhythm used by the Typora themes.
+- Removed the extra Obsidian-only compact override that caused quoted fenced code blocks to gain excessive whitespace and visual seams.
+- Kept the outer quote shadow while allowing nested quotes to use a quieter surface without repeated shadows.
+
 ## 1.1.17 — 2026-07-17
 
 - Refined Obsidian quote cards, nested quotes, quoted lists, tasks, and code blocks in Reading View and Live Preview.

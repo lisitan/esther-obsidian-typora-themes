@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.16
+ * Esther Inspired for Obsidian 1.1.18
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -706,42 +706,11 @@ body .markdown-rendered blockquote ul > li.task-list-item::marker {
   content: "";
 }
 
+/* Match Typora: nested quotes inherit the same padding and radius, change only surface and shadow. */
 body .markdown-rendered blockquote blockquote {
-  margin: 0.7em 0 0;
-  padding: 1.15em 1.35em 1.05em 3.2em;
-  overflow: hidden;
-  border-radius: 18px;
+  margin: 1em 0 0;
   background-color: var(--esther-surface-soft);
   box-shadow: none;
-}
-
-/* Keep nested reading quotes visually continuous instead of stacking wide bands. */
-body .markdown-rendered blockquote > p:has(+ blockquote) {
-  margin-bottom: 0;
-}
-
-body .markdown-rendered blockquote:has(> blockquote:last-child) {
-  padding-bottom: 1em;
-}
-
-body .markdown-rendered blockquote blockquote::before {
-  top: -0.03em;
-  left: 0.24em;
-  font-size: 4.15rem;
-}
-
-body .markdown-rendered blockquote blockquote blockquote {
-  margin-top: 0.55em;
-  padding: 0.75em 0.9em 0.7em 3em;
-  overflow: visible;
-  border-radius: 0;
-  background-color: transparent;
-}
-
-body .markdown-rendered blockquote blockquote blockquote::before {
-  top: -0.12em;
-  left: 0.12em;
-  font-size: 3.9rem;
 }
 
 body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) {
@@ -1006,6 +975,7 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   white-space: break-spaces;
 }
 
+/* Quoted fenced blocks intentionally reuse this rule instead of adding a second compact override. */
 .markdown-rendered pre {
   position: relative;
   margin: 1.5em 0;
@@ -1049,36 +1019,6 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   word-break: normal;
   -webkit-box-decoration-break: slice;
   box-decoration-break: slice;
-}
-
-/* A fenced block inside a quote uses Typora's compact card proportions. */
-body .markdown-rendered blockquote > p:has(+ pre) {
-  margin-bottom: 0.35em;
-}
-
-body .markdown-rendered blockquote:has(> pre:last-child) {
-  padding-bottom: 0.95em;
-}
-
-body .markdown-rendered blockquote > pre {
-  margin: 0.6em 0 0.15em;
-  padding: 2.15rem 1rem 0.65rem;
-  border-radius: 12px;
-  background-image: linear-gradient(
-    to bottom,
-    var(--esther-code-toolbar) 0 1.75rem,
-    var(--esther-code-border) 1.75rem 1.8rem,
-    var(--esther-code-bg) 1.8rem 100%
-  );
-  box-shadow: 0 6px 18px var(--esther-shadow);
-}
-
-body .markdown-rendered blockquote > pre::before {
-  top: 0.58rem;
-  left: 1rem;
-  width: 8px;
-  height: 8px;
-  box-shadow: 14px 0 0 #febc2e, 28px 0 0 #28c840;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
