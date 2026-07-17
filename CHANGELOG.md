@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.17 — 2026-07-17
+
+- Refined Obsidian quote cards, nested quotes, quoted lists, tasks, and code blocks in Reading View and Live Preview.
+- Tightened list spacing, improved light code contrast, and expanded the manual regression fixtures.
+- Fixed long inline code wrapping and removed unwanted seams around nested quote content.
+- Made Reading View tables fill their outer frame instead of leaving a blank area on the right.
+- Balanced long external-link wrapping so a few characters and the external-link icon are not stranded on the last line.
+
 ## 1.1.16 — 2026-07-16
 
 - Fixed Obsidian Live Preview tables whose nested cell editors inherited the document's vertical page padding and created oversized rows.
