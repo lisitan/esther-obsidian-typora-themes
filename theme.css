@@ -650,9 +650,9 @@ input[type="checkbox"]:checked,
 /* Designed pull quote */
 body .markdown-rendered blockquote {
   position: relative;
-  min-height: 2.4em;
+  min-height: 2.3em;
   margin: 1.7em 0;
-  padding: 1.55em 1.75em 1.45em 6.5em;
+  padding: 1.55em 1.75em 1.45em 3.7em;
   overflow: hidden;
   border: 0;
   border-radius: 18px;
@@ -663,13 +663,15 @@ body .markdown-rendered blockquote {
 }
 
 body .markdown-rendered blockquote::before {
-  content: "";
+  content: "“";
   position: absolute;
-  top: 1em;
-  left: 1.75em;
-  width: 3rem;
-  height: 2.25rem;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath fill='%23f4d758' d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  top: 0.02em;
+  left: 0.28em;
+  color: var(--esther-yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .markdown-rendered blockquote > :first-child {
@@ -680,25 +682,74 @@ body .markdown-rendered blockquote::before {
   margin-bottom: 0;
 }
 
-body .markdown-rendered blockquote > * {
-  background-color: transparent;
-  background-image: none;
+body .markdown-rendered blockquote :is(ul, ol) {
+  margin-block: 0.4em;
+}
+
+body .markdown-rendered blockquote li {
+  margin-block: 0.12em;
+}
+
+body .markdown-rendered blockquote ul > li.task-list-item::marker {
+  content: "";
 }
 
 body .markdown-rendered blockquote blockquote {
-  margin: 1em 0 0;
-  background-color: var(--blockquote-background-color);
+  margin: 0.7em 0 0;
+  padding: 1.15em 1.35em 1.05em 3.2em;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: var(--esther-surface-soft);
   box-shadow: none;
 }
 
+/* Keep nested reading quotes visually continuous instead of stacking wide bands. */
+body .markdown-rendered blockquote > p:has(+ blockquote) {
+  margin-bottom: 0;
+}
+
+body .markdown-rendered blockquote:has(> blockquote:last-child) {
+  padding-bottom: 1em;
+}
+
+body .markdown-rendered blockquote blockquote::before {
+  top: -0.03em;
+  left: 0.24em;
+  font-size: 4.15rem;
+}
+
+body .markdown-rendered blockquote blockquote blockquote {
+  margin-top: 0.55em;
+  padding: 0.75em 0.9em 0.7em 3em;
+  overflow: visible;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+body .markdown-rendered blockquote blockquote blockquote::before {
+  top: -0.12em;
+  left: 0.12em;
+  font-size: 3.9rem;
+}
+
 body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) {
+  --esther-quote-shadow-top: 0 0 transparent;
+  --esther-quote-shadow-bottom: 0 0 transparent;
+  position: relative;
   box-sizing: border-box;
   min-height: 1.82em;
   padding-right: 1.75em;
-  padding-left: 6.5em;
+  padding-left: 3.7em;
+  text-indent: 0 !important;
+  border-radius: 0;
   color: var(--text-muted);
   background-color: var(--blockquote-background-color);
   background-image: none;
+  box-shadow:
+    var(--esther-quote-shadow-top),
+    -10px 0 24px -20px var(--esther-shadow),
+    10px 0 24px -20px var(--esther-shadow),
+    var(--esther-quote-shadow-bottom);
 }
 
 body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout).cm-active,
@@ -707,40 +758,166 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   background-image: none;
 }
 
-.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote:not(.HyperMD-callout),
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote):not(:has(> .cm-formatting-quote)) + .cm-line.HyperMD-quote:not(.HyperMD-callout),
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):first-child {
   position: relative;
   z-index: 1;
   margin-top: 1.7em;
   padding-top: 1.55em;
-  padding-left: 2.75em;
-  border-radius: 18px 18px 0 0;
+  padding-left: 3.7em;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  --esther-quote-shadow-top: 0 -8px 26px -14px var(--esther-shadow);
 }
 
-.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote:not(.HyperMD-callout)::before,
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote):not(:has(> .cm-formatting-quote)) + .cm-line.HyperMD-quote:not(.HyperMD-callout)::before,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):first-child::before {
-  content: "";
-  position: static;
-  display: inline-block;
-  width: 3rem;
-  height: 2.25rem;
-  margin-right: 0.75rem;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 48'%3E%3Cpath fill='%23f4d758' d='M18 2C8 9 3 18 3 29c0 10 7 17 17 17 9 0 16-7 16-16S29 15 21 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L18 2zm34 0C42 9 37 18 37 29c0 10 7 17 17 17 9 0 16-7 16-16S63 15 55 15c-2 0-4 .4-6 1.3 2-4.7 6-8.5 11-11.5L52 2z'/%3E%3C/svg%3E") center / contain no-repeat;
-  vertical-align: -0.55em;
+  content: "“";
+  position: absolute;
+  top: 0.02em;
+  left: 0.28em;
+  z-index: 2;
+  color: var(--esther-yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 1;
   pointer-events: none;
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):not(:has(+ .HyperMD-quote:not(.HyperMD-callout))) {
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):not(:has(+ .HyperMD-quote:not(.HyperMD-callout), + .cm-line > .cm-formatting-quote)) {
   margin-bottom: 1.7em;
   padding-bottom: 1.45em;
-  border-radius: 0 0 18px 18px;
-  box-shadow: none;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  --esther-quote-shadow-bottom: 0 10px 30px -8px var(--esther-shadow);
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) .cm-formatting-quote {
   color: var(--esther-yellow);
   font-weight: 800;
   opacity: 0;
+}
+
+/* Live Preview keeps nested quotes as CodeMirror lines rather than real blockquote elements. */
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout),
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout) {
+  --esther-quote-shadow-top: 0 0 transparent;
+  --esther-quote-shadow-bottom: 0 0 transparent;
+  isolation: isolate;
+  padding-right: 2.25em;
+  padding-left: 5.5em;
+  background-color: var(--blockquote-background-color);
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout) {
+  padding-right: 3em;
+  padding-left: 7.4em;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout)::after,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout)::after {
+  content: "";
+  position: absolute;
+  inset: 0 1.25em 0 3.7em;
+  z-index: 0;
+  background: var(--esther-surface-soft);
+  pointer-events: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout) > *,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout) > * {
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote-2) + .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout) {
+  padding-top: 1.15em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote-2) + .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout)::before {
+  content: "“";
+  position: absolute;
+  top: 0.02em;
+  left: 3.98rem;
+  z-index: 2;
+  color: var(--esther-yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote-2) + .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout)::after {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout):not(:has(+ :is(.HyperMD-quote-2, .HyperMD-quote-3))) {
+  padding-bottom: 1.05em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-2:not(.HyperMD-quote-3, .HyperMD-callout):not(:has(+ :is(.HyperMD-quote-2, .HyperMD-quote-3)))::after {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote-3) + .cm-line.HyperMD-quote-3:not(.HyperMD-callout) {
+  padding-top: 0.9em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-quote-3) + .cm-line.HyperMD-quote-3:not(.HyperMD-callout)::before {
+  content: "“";
+  position: absolute;
+  top: -0.02em;
+  left: 7.68rem;
+  z-index: 2;
+  color: var(--esther-yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout):not(:has(+ :is(.HyperMD-quote-2, .HyperMD-quote-3))) {
+  padding-bottom: 1.05em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote-3:not(.HyperMD-callout):not(:has(+ :is(.HyperMD-quote-2, .HyperMD-quote-3)))::after {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+/* Active quoted tasks are exposed as Markdown links by Obsidian; keep them neutral. */
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout) :is(.cm-hmd-barelink, .cm-formatting-link) {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-hmd-barelink:not(.cm-formatting-link)) > .cm-quote:nth-child(2),
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-hmd-barelink:not(.cm-formatting-link)) > .cm-formatting-link {
+  display: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-hmd-barelink:not(.cm-formatting-link)) > .cm-hmd-barelink:not(.cm-formatting-link) {
+  display: inline-grid;
+  box-sizing: border-box;
+  width: 1.05em;
+  height: 1.05em;
+  margin-right: 0.45em;
+  place-items: center;
+  border: 1.5px solid var(--esther-border-strong);
+  border-radius: 4px;
+  color: var(--esther-blue);
+  font-size: 0.86em;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: -0.08em;
 }
 
 /* Tables */
@@ -801,6 +978,14 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   color: var(--esther-inline-code-text);
   background: var(--esther-inline-code-bg);
   font-size: 0.88em;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.markdown-rendered code {
+  white-space: break-spaces;
 }
 
 .markdown-rendered pre {
@@ -841,6 +1026,41 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   background: transparent;
   font-size: 0.88rem;
   line-height: 1.68;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-box-decoration-break: slice;
+  box-decoration-break: slice;
+}
+
+/* A fenced block inside a quote uses Typora's compact card proportions. */
+body .markdown-rendered blockquote > p:has(+ pre) {
+  margin-bottom: 0.35em;
+}
+
+body .markdown-rendered blockquote:has(> pre:last-child) {
+  padding-bottom: 0.95em;
+}
+
+body .markdown-rendered blockquote > pre {
+  margin: 0.6em 0 0.15em;
+  padding: 2.15rem 1rem 0.65rem;
+  border-radius: 12px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--esther-code-toolbar) 0 1.75rem,
+    var(--esther-code-border) 1.75rem 1.8rem,
+    var(--esther-code-bg) 1.8rem 100%
+  );
+  box-shadow: 0 6px 18px var(--esther-shadow);
+}
+
+body .markdown-rendered blockquote > pre::before {
+  top: 0.58rem;
+  left: 1rem;
+  width: 8px;
+  height: 8px;
+  box-shadow: 14px 0 0 #febc2e, 28px 0 0 #28c840;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
@@ -886,6 +1106,104 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   border-bottom: 1px solid var(--esther-code-border);
   border-radius: 0 0 15px 15px;
   box-shadow: 0 10px 28px var(--esther-shadow);
+}
+
+/* Obsidian exposes fenced code inside an active quote as three inline-code lines. */
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child) {
+  isolation: isolate;
+  min-height: 1.68em;
+  padding-right: 2.95em;
+  padding-left: 4.9em;
+  color: var(--esther-code-text);
+  background-color: var(--blockquote-background-color);
+  background-image: none;
+  box-shadow:
+    var(--esther-quote-shadow-top),
+    -10px 0 24px -20px var(--esther-shadow),
+    10px 0 24px -20px var(--esther-shadow),
+    var(--esther-quote-shadow-bottom);
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child)::after {
+  content: "";
+  position: absolute;
+  inset: 0 1.75em 0 3.7em;
+  z-index: 0;
+  border-right: 1px solid var(--esther-code-border);
+  border-left: 1px solid var(--esther-code-border);
+  background: var(--esther-code-bg);
+  pointer-events: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child) > * {
+  position: relative;
+  z-index: 1;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child) > .cm-inline-code {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 0.88rem;
+  line-height: 1.68;
+  overflow-wrap: normal;
+  word-break: normal;
+  box-shadow: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line:not(:has(> .cm-formatting-quote + .cm-inline-code:last-child)) + .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child),
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):first-child {
+  min-height: 3.25rem;
+  padding-top: 2.45rem;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line:not(:has(> .cm-formatting-quote + .cm-inline-code:last-child)) + .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child)::after,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):first-child::after {
+  border-top: 1px solid var(--esther-code-border);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--esther-code-toolbar) 0 2.35rem,
+    var(--esther-code-border) 2.35rem 2.4rem,
+    var(--esther-code-bg) 2.4rem 100%
+  );
+}
+
+body .markdown-source-view.mod-cm6 .cm-line:not(:has(> .cm-formatting-quote + .cm-inline-code:last-child)) + .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child)::before,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):first-child::before {
+  content: "";
+  position: absolute;
+  top: 0.86rem;
+  left: 4.9rem;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 17px 0 0 #febc2e, 34px 0 0 #28c840;
+  pointer-events: none;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line:not(:has(> .cm-formatting-quote + .cm-inline-code:last-child)) + .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child) > .cm-inline-code,
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):first-child > .cm-inline-code {
+  opacity: 0;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):not(:has(+ .cm-line > .cm-inline-code)) {
+  padding-bottom: 1em;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):not(:has(+ .cm-line > .cm-inline-code))::after {
+  border-bottom: 1px solid var(--esther-code-border);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):has(> .cm-formatting-quote + .cm-inline-code:last-child):not(:has(+ .cm-line > .cm-inline-code)) > .cm-inline-code {
+  opacity: 0;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock.cm-active {

@@ -10,7 +10,7 @@ status: testing
 
 # Esther Inspired 回归测试样例
 
-> 这份文件不是宣传案例，而是固定测试素材。每次修改主题后，请分别在 Obsidian 浅色、Obsidian 深色、Typora Paper 和 Typora Midnight 中检查。
+> 这是 Obsidian 专用的固定测试素材。请直接复制原始 `.md` 文件到仓库，不要从 Typora 的渲染界面复制，也不要用 Typora 保存后再交给 Obsidian 测试；Typora 测试请使用 `regression-showcase-typora.md`。
 
 ## 01 / 标题层级
 
@@ -60,11 +60,29 @@ status: testing
 > 第二段包含 **粗体**、==高亮==、[链接](https://obsidian.md/)和 `inline-code`。
 >
 > - 引用中的列表
-> - 第二个列表项目
+>   - 引用中的二级无序列表
+> - 第二个一级列表项目
+>
+> 1. 引用中的有序列表
+> 2. 第二个有序列表项目
+>
+> - [ ] 引用中的未完成任务
+> - [x] 引用中的已完成任务
+>
+> 引用中的代码块：
+>
+> ```javascript
+> const quotedCode = "代码背景与文字需要保持可读";
+> ```
 
 > 外层引用
 >
-> > 嵌套引用不应出现异常宽度、重复背景或裁切。
+> > 二级嵌套引用不应出现异常宽度、重复背景或裁切。
+> >
+> > - 二级引用中的列表
+> > - 第二个列表项目
+> >
+> > > 三级嵌套引用用于检查更深层级的缩进和换行。
 
 ## 04 / Callout
 

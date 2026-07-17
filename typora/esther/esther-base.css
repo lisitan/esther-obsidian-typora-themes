@@ -360,6 +360,11 @@ tt {
   color: var(--inline-code-text);
   background: var(--inline-code-bg);
   font-size: 0.88em;
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 kbd {
@@ -402,6 +407,11 @@ kbd {
   color: inherit;
   background: transparent;
   font-size: inherit;
+  white-space: inherit;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-box-decoration-break: slice;
+  box-decoration-break: slice;
 }
 
 .md-fences::before {
