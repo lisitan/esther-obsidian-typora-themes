@@ -578,6 +578,18 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
   background: var(--esther-yellow-soft);
 }
 
+/* Balance wrapped URLs so the last line is not only a few characters and an icon. */
+body .markdown-rendered p:has(a.external-link),
+body .markdown-source-view.mod-cm6 .cm-line:has(.cm-link) {
+  text-wrap: pretty;
+}
+
+body .markdown-rendered a.external-link,
+body .markdown-source-view.mod-cm6 .cm-link {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
 /* Obsidian wiki links: resolved notes, aliases and missing notes */
 .markdown-rendered .internal-link,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link {
@@ -922,6 +934,7 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
 
 /* Tables */
 .markdown-rendered table {
+  display: table;
   width: 100%;
   border: 1px solid var(--esther-border);
   border-spacing: 0;
@@ -930,6 +943,11 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   background: var(--esther-surface);
   box-shadow: 0 6px 22px var(--esther-shadow);
   overflow: hidden;
+}
+
+.markdown-rendered .el-table {
+  width: 100%;
+  overflow-x: auto;
 }
 
 .markdown-rendered :is(th, td) {
