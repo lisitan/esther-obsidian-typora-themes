@@ -388,13 +388,6 @@ kbd {
   border-radius: 15px;
   color: var(--code-text);
   background-color: var(--surface-code);
-  background-image: linear-gradient(
-    to bottom,
-    var(--code-toolbar) 0 2.35rem,
-    var(--code-border) 2.35rem 2.4rem,
-    var(--surface-code) 2.4rem 100%
-  );
-  background-repeat: no-repeat;
   box-shadow: 0 12px 30px var(--shadow-color);
   font-size: 0.88rem;
   line-height: 1.68;
@@ -427,6 +420,23 @@ kbd {
   box-shadow: 17px 0 0 #febc2e, 34px 0 0 #28c840;
 }
 
+.md-fences::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 2.4rem;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(
+    to bottom,
+    var(--code-toolbar) 0 2.35rem,
+    var(--code-border) 2.35rem 2.4rem
+  );
+  pointer-events: none;
+}
+
 .md-fences .CodeMirror-code {
   color: var(--code-text);
 }
@@ -443,8 +453,18 @@ kbd {
   background: transparent;
 }
 
+.md-fences .CodeMirror-activeline {
+  background: transparent !important;
+}
+
+.md-fences .CodeMirror-activeline .CodeMirror-line,
 .md-fences .CodeMirror-activeline-background {
-  background: var(--code-active-line);
+  background: transparent !important;
+}
+
+.md-fences:focus-within .CodeMirror-activeline .CodeMirror-line,
+.md-fences:focus-within .CodeMirror-activeline-background {
+  background: var(--code-active-line) !important;
 }
 
 .md-fences .CodeMirror-selected,
@@ -589,7 +609,6 @@ p > img:only-child {
 }
 
 .md-meta,
-.md-expand,
 .md-htmlblock,
 .md-comment,
 .md-link-title,
