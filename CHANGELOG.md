@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.19 — 2026-07-22
+
+- Fixed Typora's active paragraph becoming faint while editing by keeping the `.md-expand` container out of the auxiliary Markdown text color rule.
+- Limited fenced-code active-line backgrounds to the editor that actually has focus, so Typora and Obsidian no longer leave the first or previously edited code line looking different after the cursor moves away.
+
 ## 1.1.18 — 2026-07-17
 
 - Restored Obsidian Reading View quote cards to the same spacing, radius, and nesting rhythm used by the Typora themes.

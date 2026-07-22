@@ -1,5 +1,5 @@
 /*
- * Esther Inspired for Obsidian 1.1.18
+ * Esther Inspired for Obsidian 1.1.19
  * Light: Esther Paper · Dark: Esther Midnight
  * Adapted from Esther Design System by ESTHER不二 (esthersjw)
  * Source: https://github.com/esthersjw/esther-design-system
@@ -1164,7 +1164,7 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote:not(.HyperMD-callout):
   opacity: 0;
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock.cm-active {
+.markdown-source-view.mod-cm6 .cm-editor.cm-focused .cm-line.HyperMD-codeblock.cm-active {
   background-color: var(--esther-code-active-line);
 }
 
